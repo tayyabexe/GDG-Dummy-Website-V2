@@ -41,6 +41,7 @@ export const events = [
         time: "10:00 AM",
         location: "Lab 3, CS Dept",
         category: "Web Dev",
+        description: "Kickstart your frontend journey with React and Tailwind CSS in this hands-on bootcamp.",
         seatsTotal: 50,
         seatsFilled: 32,
         image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800"
@@ -52,6 +53,7 @@ export const events = [
         time: "02:00 PM",
         location: "Seminar Hall",
         category: "AI/ML",
+        description: "Learn the fundamentals of Artificial Intelligence and train your first ML model using Python.",
         seatsTotal: 100,
         seatsFilled: 85,
         image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800"
@@ -63,6 +65,7 @@ export const events = [
         time: "11:00 AM",
         location: "Auditorium",
         category: "Cloud",
+        description: "Explore Google Cloud Platform and learn how to deploy scalable apps in modern cloud environments.",
         seatsTotal: 200,
         seatsFilled: 150,
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"

@@ -12,7 +12,8 @@ const Navbar = () => {
     // Hide navbar on scroll down
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious();
-        if (latest > previous && latest > 150) {
+        // Hides immediately (with a tiny 10px threshold to prevent jitter at absolute top)
+        if (latest > previous && latest > 10) {
             setHidden(true);
         } else {
             setHidden(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className={`fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-300`}
         >
-            <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="container mx-auto px-6 py-[8px] flex items-center justify-between">
 
                 {/* Logo Section */}
                 <NavLink to="/" className="flex items-center gap-2 group relative z-50">

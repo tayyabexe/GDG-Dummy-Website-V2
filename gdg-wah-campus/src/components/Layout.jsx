@@ -14,26 +14,8 @@ const Layout = ({ children }) => {
                 {/* Gradient Border (Top) */}
                 <div className="h-[1px] w-full bg-gradient-to-r from-google-blue via-google-red to-google-yellow z-20 relative opacity-50"></div>
 
-                {/* Geometric Shapes Background (Light Mode Watermarks) */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    {/* Circle - Blue (Reduced Opacity) */}
-                    <div className="absolute -top-10 -left-10 w-64 h-64 border-2 border-google-blue/10 rounded-full blur-[2px] animate-[spin_10s_linear_infinite]" />
-                    <div className="absolute top-20 left-10 w-20 h-20 bg-google-blue/5 rounded-full blur-xl" />
-
-                    {/* Triangle - Red (CSS Clip Path) */}
-                    <div className="absolute top-10 right-20 w-32 h-32 bg-google-red/5 blur-xl clip-path-triangle" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
-                    <div className="absolute top-0 right-10 w-40 h-40 border-2 border-google-red/10 opacity-30" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
-
-                    {/* Square - Green */}
-                    <div className="absolute bottom-20 left-1/3 w-24 h-24 border-2 border-google-green/10 rotate-12 blur-[1px]" />
-                    <div className="absolute bottom-0 left-1/4 w-40 h-40 bg-google-green/5 blur-2xl rounded-xl" />
-
-                    {/* Cross/Plus - Yellow */}
-                    <div className="absolute bottom-10 right-10 text-9xl text-google-yellow/20 font-black select-none pointer-events-none opacity-20">+</div>
-                </div>
-
-                <div className="container mx-auto px-6 py-16 relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div className="container mx-auto px-6 py-8 md:py-10 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                         {/* Col 1: Brand */}
                         <div>
                             <div className="mb-6">
@@ -101,8 +83,8 @@ const Layout = ({ children }) => {
                         </div>
                     </div>
 
-                    <div className="border-t border-gray-200 pt-8 text-center text-xs text-gray-500">
-                        <p>&copy; {new Date().getFullYear()} GDGoC CUI Wah. Built with React & Tailwind.</p>
+                    <div className="border-t border-gray-200 pt-6 text-center text-xs text-gray-500">
+                        <p>&copy; {new Date().getFullYear()} GDGoC CUI Wah</p>
                     </div>
                 </div>
             </footer>
