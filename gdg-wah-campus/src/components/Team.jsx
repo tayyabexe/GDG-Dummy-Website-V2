@@ -14,10 +14,10 @@ const TeamCard = ({ image, name, role, delay, className = "", imageStyle = {}, i
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: delay }}
-            className={`flex flex-col items-center group bg-white shadow-xl shadow-gray-200/50 border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl hover:border-google-blue/20 transition-all duration-300 ${className}`}
+            className={`flex flex-col items-center h-full group bg-white shadow-xl shadow-gray-200/50 border border-gray-100 p-8 rounded-[2rem] hover:shadow-2xl hover:border-google-blue/20 transition-all duration-300 ${className}`}
         >
             {/* Image Container */}
-            <div className={`relative w-4/5 md:w-full transition-transform duration-300 group-hover:-translate-y-2 ${imageContainerClass}`}>
+            <div className={`relative w-4/5 md:w-full transition-transform duration-300 group-hover:-translate-y-2 flex-grow-0 ${imageContainerClass}`}>
                 <img
                     src={image}
                     alt={name}
@@ -26,7 +26,7 @@ const TeamCard = ({ image, name, role, delay, className = "", imageStyle = {}, i
                 />
             </div>
             {/* Explicit Text rendering below the panel image */}
-            <div className="text-center bg-white relative z-10 w-full pt-4 rounded-b-[2rem]">
+            <div className="text-center mt-auto bg-white relative z-10 w-full pt-4 rounded-b-[2rem]">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-google-blue transition-colors">{name}</h3>
                 <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest mt-1">{role}</p>
             </div>

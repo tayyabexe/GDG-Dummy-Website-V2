@@ -13,7 +13,7 @@ const AnimatedHeadline = ({ label, headline, highlights, highlightColor }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start 80%", "center center"]
+        offset: ["start 90%", "center 60%"],
     });
 
     const baseColor = useTransform(scrollYProgress, [0, 1], ["#E5E7EB", "#202124"]);
@@ -67,7 +67,7 @@ const Home = () => {
         <div className="overflow-x-hidden font-sans selection:bg-google-blue selection:text-white">
 
             {/* B. Hero Section */}
-            <section className="relative h-screen min-h-[100vh] w-full bg-[#202124] overflow-hidden flex items-center justify-center pt-[70px]">
+            <section className="relative min-h-[111.11vh] w-full bg-[#202124] overflow-hidden flex items-center justify-center pt-[70px]">
 
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none"

@@ -5,18 +5,42 @@ import { team } from '../data/mockData';
 
 const Team = () => {
     return (
-        <div className="py-20 bg-gray-50 min-h-screen">
-            <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center mb-16"
-                >
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-google-dark mb-4">Meet the Team</h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        The passionate individuals behind GDG Wah Campus.
-                    </p>
-                </motion.div>
+        <div className="bg-gray-50 min-h-screen relative flex flex-col">
+            {/* Dark Hero Section matching Events/Home Page */}
+            <section className="relative w-full bg-[#202124] overflow-hidden flex flex-col items-center justify-center pt-32 pb-24 md:pt-40 md:pb-32 mb-20">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none"
+                    style={{
+                        backgroundImage: 'radial-gradient(#4285F4 2px, transparent 2px)',
+                        backgroundSize: '40px 40px'
+                    }}>
+                </div>
+
+                <div className="container mx-auto px-6 relative z-10 flex justify-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-center flex flex-col items-center"
+                    >
+                        {/* 4 Google Colors Dots */}
+                        <div className="flex justify-center items-center gap-2.5 mb-8">
+                            <span className="w-3 h-3 rounded-full bg-[#4285F4]"></span>
+                            <span className="w-3 h-3 rounded-full border-none bg-[#EA4335]"></span>
+                            <span className="w-3 h-3 rounded-full border-none bg-[#FBBC05]"></span>
+                            <span className="w-3 h-3 rounded-full border-none bg-[#34A853]"></span>
+                        </div>
+
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
+                            Meet the <span className="text-[#4285F4]">Team</span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
+                            Empowering innovation through collaboration. Our faculty-guided student team is dedicated to learning, building, and driving tech impact at CUI Wah.
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            <div className="container mx-auto px-6 pb-24">
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {team.map((member, index) => (
@@ -35,9 +59,9 @@ const Team = () => {
                                     <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
                                     <p className="text-google-blue font-medium">{member.role}</p>
                                     <div className={`mt-4 w-12 h-1 bg-gradient-to-r ${index % 4 === 0 ? 'from-google-blue to-blue-300' :
-                                            index % 4 === 1 ? 'from-google-red to-red-300' :
-                                                index % 4 === 2 ? 'from-google-yellow to-yellow-300' :
-                                                    'from-google-green to-green-300'
+                                        index % 4 === 1 ? 'from-google-red to-red-300' :
+                                            index % 4 === 2 ? 'from-google-yellow to-yellow-300' :
+                                                'from-google-green to-green-300'
                                         }`} />
                                 </div>
 

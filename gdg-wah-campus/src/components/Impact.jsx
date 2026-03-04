@@ -28,7 +28,7 @@ const stats = [
     {
         eyebrow: "INNOVATION",
         label: "Hackathons Hosted",
-        subtext: "Intensive 8-hour sprints to build local solutions.",
+        subtext: "Intensive 5-hour sprints to build local solutions.",
         value: 5,
         suffix: "+",
         color: "#F4B400", // Google Yellow
@@ -175,10 +175,10 @@ const TimelineItem = ({ stat, index, isLast }) => {
             className={`relative flex flex-col md:flex-row items-center justify-between ${!isLast ? 'mb-28 md:mb-40' : ''} w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }} // Adjusted margin to be percentage based for better responsiveness
+            viewport={{ once: true, margin: "-10%" }}
             variants={{
                 hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { staggerChildren: 0.15 } } // slightly faster stagger
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
             }}
         >
             {/* Center Node (Spine Dots) */}
@@ -186,7 +186,7 @@ const TimelineItem = ({ stat, index, isLast }) => {
                 <motion.div
                     variants={{
                         hidden: { scale: 0 },
-                        visible: { scale: 1, transition: { type: "spring", stiffness: 300, damping: 25 } } // smoother spring
+                        visible: { scale: 1, transition: { type: "spring", stiffness: 300, damping: 25 } }
                     }}
                     className="relative flex items-center justify-center w-6 h-6 rounded-full bg-white shadow-md z-10 will-change-transform transform-gpu"
                     style={{ border: `4px solid ${stat.color}` }}
@@ -255,21 +255,23 @@ const TimelineItem = ({ stat, index, isLast }) => {
 
 const Impact = () => {
     const containerRef = useRef(null);
+
+    // FIXED: Reverted to the offset that works perfectly for your layout height
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        // Adjusted for a high-velocity scroll offset
-        offset: ["start 0%", "end 70%"]
+        offset: ["start 5%", "end 150%"]
     });
 
+    // FIXED: Reverted to the smoother spring physics that prevent trailing/lag
     const scaleY = useSpring(scrollYProgress, {
-        stiffness: 300, // Increased for more speed
-        damping: 40,    // Lowered for a snappier halt
+        stiffness: 300,
+        damping: 50,
         restDelta: 0.001
     });
 
     return (
         <section className="pt-12 pb-24 md:pt-20 md:pb-40 bg-[#F8F9FA] relative overflow-hidden" ref={containerRef}>
-            {/* The Blueprint Overlay - Engineering lab aesthetic */}
+            {/* Engineering Lab Background */}
             <div
                 className="absolute inset-0 opacity-[0.25] pointer-events-none transform-gpu"
                 style={{
@@ -279,30 +281,37 @@ const Impact = () => {
             />
 
             <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-                {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    className="text-center mb-24 md:mb-40 will-change-transform transform-gpu"
+                    viewport={{ once: true, margin: "90px" }}
+                    className="text-center mb-12 md:mb-16 will-change-transform transform-gpu"
                 >
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight">Our Impact So Far</h2>
+                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight">Our Impacts So Far</h2>
                     <p className="text-gray-500 mt-6 max-w-2xl mx-auto text-lg md:text-xl font-medium">
                         We're not just about numbers; we're about the stories behind them. Here is a look at what we've built together since 2025.
                     </p>
                 </motion.div>
 
-                {/* Timeline */}
                 <div className="relative">
-                    {/* The Power Cable Spine Track */}
+                    {/* Background Spine (Grey Track) - FIXED: Re-added top/bottom padding to keep the line contained */}
                     <div className="absolute left-[8%] md:left-1/2 top-4 bottom-4 w-1.5 bg-gray-200 -translate-x-1/2 rounded-full overflow-hidden z-0">
-                        {/* The Active Fill */}
+                        {/* The High-Visibility Highlighted Stem */}
                         <motion.div
                             className="absolute top-0 left-0 w-full origin-top will-change-transform transform-gpu"
                             style={{
                                 scaleY,
                                 height: '100%',
-                                backgroundImage: `linear-gradient(to bottom, ${stats[0].color} 0%, ${stats[0].color} 12%, ${stats[1].color} 38%, ${stats[2].color} 64%, ${stats[3].color} 90%, ${stats[3].color} 100%)`
+                                // Kept your new gradient
+                                backgroundImage: `linear-gradient(to bottom, 
+                                    #4285F4 0%, 
+                                    #4285F4 25%, 
+                                    #0F9D58 35%, 
+                                    #0F9D58 50%, 
+                                    #F4B400 60%, 
+                                    #F4B400 75%, 
+                                    #DB4437 85%, 
+                                    #DB4437 100%)`
                             }}
                         />
                     </div>

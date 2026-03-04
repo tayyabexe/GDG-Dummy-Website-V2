@@ -42,7 +42,7 @@ const Navbar = () => {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-300`}
+            className={`fixed top-0 left-0 w-full z-50 bg-white shadow-sm transition-all duration-200`}
         >
             <div className="container mx-auto px-6 py-[8px] flex items-center justify-between">
 
