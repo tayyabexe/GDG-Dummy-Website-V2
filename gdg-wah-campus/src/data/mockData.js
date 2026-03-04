@@ -159,33 +159,33 @@ export const events = [
 export const team = [
     {
         id: 1,
-        name: "Sara Khan",
-        role: "Tech Lead",
-        image: "https://randomuser.me/api/portraits/women/65.jpg",
+        name: "Sir Kashif",
+        role: "Faculty Advisor",
+        image: new URL('../assets/panel png/sir kashif cleaned frame.png', import.meta.url).href,
         stack: ["React", "Node.js", "MongoDB"],
         socials: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
         id: 2,
-        name: "Ali Raza",
+        name: "Junaid",
         role: "Event Manager",
-        image: "https://randomuser.me/api/portraits/men/91.jpg",
+        image: new URL('../assets/panel png/Junaid cleaned frame.png', import.meta.url).href,
         stack: ["Management", "Public Speaking", "Canva"],
         socials: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
         id: 3,
-        name: "Fatima Noor",
+        name: "Laiba",
         role: "Creative Director",
-        image: "https://randomuser.me/api/portraits/women/23.jpg",
+        image: new URL('../assets/panel png/Laiba cleaned frame.png', import.meta.url).href,
         stack: ["Figma", "Adobe XD", "Illustrator"],
         socials: { twitter: "#", linkedin: "#", github: "#" }
     },
     {
         id: 4,
-        name: "Hassan Ali",
+        name: "Ubaid",
         role: "Flutter Dev",
-        image: "https://randomuser.me/api/portraits/men/45.jpg",
+        image: new URL('../assets/panel png/ubaid cleaned frame.png', import.meta.url).href,
         stack: ["Flutter", "Dart", "Firebase"],
         socials: { twitter: "#", linkedin: "#", github: "#" }
     }

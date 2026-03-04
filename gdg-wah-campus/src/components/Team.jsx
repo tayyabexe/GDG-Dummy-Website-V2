@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Importing panel images
-import kashifPanel from '../assets/panel png/sir kashif panel.png';
-import ubaidPanel from '../assets/panel png/ubaid panel.png';
-import laibaPanel from '../assets/panel png/laiba panel.png';
-import junaidPanel from '../assets/panel png/junaid panel.png';
+import kashifPanel from '../assets/panel png/sir kashif cleaned frame.png';
+import ubaidPanel from '../assets/panel png/ubaid cleaned frame.png';
+import laibaPanel from '../assets/panel png/Laiba cleaned frame.png';
+import junaidPanel from '../assets/panel png/Junaid cleaned frame.png';
 
-const TeamCard = ({ image, name, role, delay, className = "", imageStyle = {}, imageContainerClass = "" }) => {
+export const TeamCard = ({ image, name, role, delay, className = "", imageStyle = {}, imageContainerClass = "" }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -75,8 +75,8 @@ const Team = () => {
                         name="Ubaid Ghazi"
                         role="Campus Lead"
                         delay={0.2}
-                        imageContainerClass="-mb-12 lg:-mb-24"
-                        imageStyle={{ clipPath: 'inset(0 3% 27% 4%)' }}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
                     />
                     <TeamCard
                         image={laibaPanel}
@@ -84,15 +84,15 @@ const Team = () => {
                         role="Chairperson"
                         delay={0.3}
                         imageContainerClass="mb-6 lg:mb-10"
-                        imageStyle={{ clipPath: 'inset(4.5% 4.3% 3% 4.3%)', transform: 'scale(1.2) translateY(5%)' }}
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
                     />
                     <TeamCard
                         image={junaidPanel}
                         name="Junaid Mehmood"
                         role="General Secretary"
                         delay={0.4}
-                        imageContainerClass="-mb-12 lg:-mb-24"
-                        imageStyle={{ clipPath: 'inset(0 3% 27% 4%)' }}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
                     />
                 </div>
             </div>

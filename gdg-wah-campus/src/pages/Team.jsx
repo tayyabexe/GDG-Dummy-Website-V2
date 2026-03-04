@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Code, Server, Database } from 'lucide-react';
-import { team } from '../data/mockData';
+
+import { TeamCard } from '../components/Team';
+import kashifPanel from '../assets/panel png/sir kashif cleaned frame.png';
+import ubaidPanel from '../assets/panel png/ubaid cleaned frame.png';
+import laibaPanel from '../assets/panel png/Laiba cleaned frame.png';
+import junaidPanel from '../assets/panel png/Junaid cleaned frame.png';
 
 const Team = () => {
     return (
@@ -42,63 +47,147 @@ const Team = () => {
 
             <div className="container mx-auto px-6 pb-24">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {team.map((member, index) => (
-                        <div key={member.id} className="group h-[320px] perspective-1000">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="relative w-full h-full text-center transition-transform duration-700 transform-style-3d group-hover:rotate-y-180"
-                            >
-                                {/* Front Side */}
-                                <div className="absolute inset-0 w-full h-full bg-white rounded-2xl shadow-lg border border-gray-100 backface-hidden flex flex-col items-center justify-center p-6">
-                                    <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-gray-50 bg-gray-100">
-                                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
-                                    <p className="text-google-blue font-medium">{member.role}</p>
-                                    <div className={`mt-4 w-12 h-1 bg-gradient-to-r ${index % 4 === 0 ? 'from-google-blue to-blue-300' :
-                                        index % 4 === 1 ? 'from-google-red to-red-300' :
-                                            index % 4 === 2 ? 'from-google-yellow to-yellow-300' :
-                                                'from-google-green to-green-300'
-                                        }`} />
-                                </div>
+                {/* Core Team Section */}
+                <div className="flex flex-col items-center justify-center mb-16 relative">
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="h-[1px] w-12 bg-gray-300"></div>
+                        <span className="text-gray-500 font-bold uppercase tracking-widest text-sm">Leadership</span>
+                        <div className="h-[1px] w-12 bg-gray-300"></div>
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#0a1128] tracking-tight">Core Team</h2>
+                </div>
 
-                                {/* Back Side */}
-                                <div className="absolute inset-0 w-full h-full bg-google-dark text-white rounded-2xl shadow-xl backface-hidden rotate-y-180 flex flex-col items-center justify-center p-6 border-2 border-google-blue">
-                                    <h4 className="text-lg font-bold mb-4 text-google-blue">Tech Stack</h4>
-                                    <div className="flex flex-wrap justify-center gap-2 mb-6">
-                                        {member.stack.map((tech, i) => (
-                                            <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <a href={member.socials.github} className="p-2 bg-white/10 rounded-full hover:bg-google-blue transition-colors">
-                                            <Github size={18} />
-                                        </a>
-                                        <a href={member.socials.twitter} className="p-2 bg-white/10 rounded-full hover:bg-google-blue transition-colors">
-                                            <Twitter size={18} />
-                                        </a>
-                                        <a href={member.socials.linkedin} className="p-2 bg-white/10 rounded-full hover:bg-google-blue transition-colors">
-                                            <Linkedin size={18} />
-                                        </a>
-                                    </div>
-                                </div>
-                            </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-7xl mx-auto px-4 md:px-0 mb-32">
+                    <TeamCard
+                        image={kashifPanel}
+                        name="Dr. Kashif Ayyub"
+                        role="Faculty Advisor"
+                        delay={0.1}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
+                    />
+                    <TeamCard
+                        image={ubaidPanel}
+                        name="Ubaid Ghazi"
+                        role="Campus Lead"
+                        delay={0.2}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
+                    />
+                    <TeamCard
+                        image={laibaPanel}
+                        name="Laiba Faiz"
+                        role="Chairperson"
+                        delay={0.3}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
+                    />
+                    <TeamCard
+                        image={junaidPanel}
+                        name="Junaid Mehmood"
+                        role="General Secretary"
+                        delay={0.4}
+                        imageContainerClass="mb-6 lg:mb-10"
+                        imageStyle={{ clipPath: 'inset(5% 4% 3% 4%)', transform: 'scale(1.2) translateY(5%)' }}
+                    />
+                </div>
+
+                {/* Domain Leads Section */}
+                <div className="flex flex-col items-center justify-center mb-16 relative mt-16">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#0a1128] tracking-tight mb-4">Domain Leads</h2>
+                    <p className="text-gray-500 font-medium text-lg text-center max-w-2xl">Specialists leading each technology vertical</p>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-10 md:gap-16 mb-32 max-w-6xl mx-auto">
+                    {/* Domain Leads Mock Layout matching Image 3 */}
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#4285F4]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
                         </div>
-                    ))}
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#4285F4]">Web</span>
+                        <h3 className="text-lg font-bold text-gray-900">Zara Hussain</h3>
+                        <p className="text-sm text-gray-500">Web Dev Lead</p>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#0F9D58]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
+                        </div>
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#0F9D58]">Android</span>
+                        <h3 className="text-lg font-bold text-gray-900">Hassan Kamran</h3>
+                        <p className="text-sm text-gray-500">Android Dev Lead</p>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#DB4437]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
+                        </div>
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#DB4437]">ML/AI</span>
+                        <h3 className="text-lg font-bold text-gray-900">Ayesha Malik</h3>
+                        <p className="text-sm text-gray-500">ML/AI Lead</p>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#F4B400]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
+                        </div>
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#F4B400]">Cloud</span>
+                        <h3 className="text-lg font-bold text-gray-900">Usman Sheikh</h3>
+                        <p className="text-sm text-gray-500">Cloud Lead</p>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#4285F4]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
+                        </div>
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#4285F4]">Marketing</span>
+                        <h3 className="text-lg font-bold text-gray-900">Nadia Farooq</h3>
+                        <p className="text-sm text-gray-500">Marketing & Outreach</p>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center">
+                        <div className="w-28 h-28 md:w-36 md:h-36 rounded-[2rem] border-4 p-1 overflow-hidden mb-4 border-[#DB4437]">
+                            <div className="w-full h-full bg-gray-200 rounded-[1.5rem]"></div>
+                        </div>
+                        <span className="text-[11px] font-bold text-white px-3 py-1 rounded-full mb-2 bg-[#DB4437]">Design</span>
+                        <h3 className="text-lg font-bold text-gray-900">Omar Tariq</h3>
+                        <p className="text-sm text-gray-500">Design Lead</p>
+                    </div>
+                </div>
+
+                {/* Our Tracks Section */}
+                <h2 className="text-[1.75rem] md:text-3xl font-bold text-center mb-10 text-[#0a1128]">Our Tracks</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+                    {/* Track 1 */}
+                    <div className="bg-[#e8f0fe] border border-[#d2e3fc] rounded-xl p-8 flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1">
+                        <span className="text-[2.5rem] md:text-[3rem] tracking-tighter font-black text-[#1A73E8] mb-1">12</span>
+                        <h4 className="text-[#174EA6] font-bold text-base mb-0.5">Web Development</h4>
+                        <span className="text-[#1A73E8]/80 text-sm">members</span>
+                    </div>
+
+                    {/* Track 2 */}
+                    <div className="bg-[#e6f4ea] border border-[#ceead6] rounded-xl p-8 flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1">
+                        <span className="text-[2.5rem] md:text-[3rem] tracking-tighter font-black text-[#1E8E3E] mb-1">10</span>
+                        <h4 className="text-[#0D652D] font-bold text-base mb-0.5">Android Dev</h4>
+                        <span className="text-[#1E8E3E]/80 text-sm">members</span>
+                    </div>
+
+                    {/* Track 3 */}
+                    <div className="bg-[#fce8e6] border border-[#fad2cf] rounded-xl p-8 flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1">
+                        <span className="text-[2.5rem] md:text-[3rem] tracking-tighter font-black text-[#D93025] mb-1">9</span>
+                        <h4 className="text-[#A50E0E] font-bold text-base mb-0.5">ML / AI</h4>
+                        <span className="text-[#D93025]/80 text-sm">members</span>
+                    </div>
+
+                    {/* Track 4 */}
+                    <div className="bg-[#fef7e0] border border-[#feefc3] rounded-xl p-8 flex flex-col items-center justify-center text-center transition-transform hover:-translate-y-1">
+                        <span className="text-[2.5rem] md:text-[3rem] tracking-tighter font-black text-[#F9AB00] mb-1">8</span>
+                        <h4 className="text-[#E37400] font-bold text-base mb-0.5">Cloud Computing</h4>
+                        <span className="text-[#F9AB00]/80 text-sm">members</span>
+                    </div>
                 </div>
             </div>
-
-            <style>{`
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
-      `}</style>
         </div>
     );
 };
