@@ -197,28 +197,60 @@ export const resources = [
         title: "React Workshop Slides",
         type: "Slides",
         link: "#",
-        category: "Web Dev"
+        category: "Workshop",
+        popularity: 850,
+        description: "Comprehensive slides covering React fundamentals, hooks, state management, and component lifecycle.",
+        size: "4.2 MB",
+        date: "Oct 12, 2025",
+        fullSummary: "From our highly successful October 2025 Web Dev bootcamp. These slides capture the entirety of the 3-day workshop series, starting from basic JSX rendering all the way to advanced custom hooks tailored for enterprise-scale applications.",
+        keyTakeaways: ["Understanding React Fiber & Virtual DOM", "Mastering useEffect and advanced hook dependencies", "Context API vs Redux state management", "Best practices for purely functional component design"],
+        contributor: { name: "Sarah Connor", image: "https://i.pravatar.cc/150?u=a042581f4e29026024d" },
+        relatedLink: "https://github.com/gdg/react-workshop-2025"
     },
     {
         id: 2,
         title: "Intro to Python Repo",
-        type: "GitHub",
+        type: "Github",
         link: "#",
-        category: "AI/ML"
+        category: "Workshop",
+        popularity: 640,
+        description: "Source code and boilerplate setups for our introductory Python and ML study jam. Clone and run in minutes.",
+        size: "12 KB",
+        date: "Nov 05, 2025",
+        fullSummary: "Curated during the Fall AI & Machine Learning Study Jam. This repository acts as the baseline infrastructure, pre-configured with essential requirements like NumPy, Pandas, and Scikit-Learn to get your models running immediately without environment headaches.",
+        keyTakeaways: ["Pre-configured Python 3.10 virtual environment", "Jupyter notebook data visualization templates", "Sample datasets (CSV) optimized for linear regression", "Automated requirements.txt installer scripts"],
+        contributor: { name: "Alex Chen", image: "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
+        relatedLink: "https://github.com/gdg/intro-python-repo"
     },
     {
         id: 3,
         title: "Git Cheatsheet PDF",
-        type: "PDFs",
+        type: "Docs",
         link: "#",
-        category: "General"
+        category: "Info Session",
+        popularity: 920,
+        description: "A quick reference design guide for essential Git commands and collaborative daily code workflows.",
+        size: "1.1 MB",
+        date: "Sep 28, 2025",
+        fullSummary: "Designed specifically to help incoming computer science freshmen survive introductory open-source development. This high-resolution, printable PDF covers everything from git init and basic staging maneuvers to resolving complicated merge conflicts via rebase.",
+        keyTakeaways: ["Graphic visualization of Git Tree vs Working Directory", "Handling remote fetch, pull, and upstream merges", "Stashing workflow tips", "Emergency git undo commands (reset, revert, reflog)"],
+        contributor: { name: "Jordan Smith", image: "https://i.pravatar.cc/150?u=a04258114e29026702d" },
+        relatedLink: "#"
     },
     {
         id: 4,
         title: "Flutter Setup Guide",
-        type: "PDFs",
+        type: "Docs",
         link: "#",
-        category: "Mobile Dev"
+        category: "Study Jam",
+        popularity: 450,
+        description: "Step-by-step instructions and best practices to install the Flutter SDK, Android Studio, and run emulators.",
+        size: "2.8 MB",
+        date: "Dec 10, 2025",
+        fullSummary: "Extracted directly from the Winter Mobile App Hackathon kickoff. Setting up cross-platform development environments can be incredibly frustrating – this guide breaks down path variable configurations, IDE plugin matching, and Android SDK licensing into bite-sized visual steps.",
+        keyTakeaways: ["Correctly setting Windows/macOS path variables", "Installing Android Studio + command-line tools", "Diagnosing 'flutter doctor' common errors", "Setting up a lightweight Android emulator"],
+        contributor: { name: "Priya Patel", image: "https://i.pravatar.cc/150?u=a04258a2462d826712d" },
+        relatedLink: "https://flutter.dev/docs/get-started/install"
     }
 ];
 

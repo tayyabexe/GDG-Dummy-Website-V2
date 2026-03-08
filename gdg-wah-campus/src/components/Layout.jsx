@@ -51,7 +51,6 @@ const Layout = ({ children }) => {
                                 <li><a href="/events" className="hover:text-blue-600 transition-colors">Upcoming Events</a></li>
                                 <li><a href="/team" className="hover:text-blue-600 transition-colors">Our Team</a></li>
                                 <li><a href="/resources" className="hover:text-blue-600 transition-colors">Learning Resources</a></li>
-                                <li><a href="/gallery" className="hover:text-blue-600 transition-colors">Photo Gallery</a></li>
                             </ul>
                         </div>
 
@@ -87,9 +86,9 @@ const Layout = ({ children }) => {
                         <p>&copy; {new Date().getFullYear()} GDGoC CUI Wah</p>
                     </div>
                 </div>
-            </footer>
+            </footer >
             <ChatWidget />
-        </div>
+        </div >
     );
 };
 
